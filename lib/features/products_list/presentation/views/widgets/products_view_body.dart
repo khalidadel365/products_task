@@ -5,6 +5,14 @@ class ProductsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('task');
+    return GridView.builder(
+      itemCount: 10,
+      clipBehavior: Clip.none,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      itemBuilder: (BuildContext context, int index) {
+        return Text('data');
+      },
+
+    );
   }
 }
