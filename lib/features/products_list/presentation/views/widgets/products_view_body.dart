@@ -12,7 +12,7 @@ class ProductsViewBody extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // columns
         mainAxisSpacing: 4,
-        crossAxisSpacing: 8,
+        crossAxisSpacing: 4,
         childAspectRatio: 0.7,
       ),
       itemBuilder: (BuildContext context, int index) {
