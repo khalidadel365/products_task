@@ -9,6 +9,7 @@ import 'core/utilities/api_service.dart';
 import 'core/utilities/sevice_locator.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const ProductsTask());
 }
 
@@ -19,7 +20,7 @@ class ProductsTask extends StatelessWidget {
   Widget build(BuildContext context) {
     ProductsRepoImp(ApiService()).fetchProducts();
     return BlocProvider(
-      create: (context) => ProductsViewCubit(getIt.get<ProductsRepoImp>()),
+      create: (context) => ProductsViewCubit(getIt.get<ProductsRepoImp>())..fetchProductsView(),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: ProductsView()

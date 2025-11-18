@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:products_task/core/widgets/custom_icon_button.dart';
+import 'package:products_task/features/products_list/data/models/product_model.dart';
 
 import '../../../../../constants.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  const CustomCard({super.key,required this.product});
 
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,11 +29,16 @@ class CustomCard extends StatelessWidget {
              children: [
                ClipRRect(
                  borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                 child: Image.network(
-                   "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
-                   height: 130,
-                   width: double.infinity,
-                 fit: BoxFit.fill,
+                 child: Align(
+                   alignment: Alignment.center,
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 12.0),
+                     child: Image.network(
+                       product.image!,
+                       height: 120,
+                     fit: BoxFit.fill,
+                     ),
+                   ),
                  ),
                ),
                CustomIconButton(icon: Icons.favorite_outline,onPressed: (){}, backgroundColor: Colors.white, iconColor: kPrimaryColor,)
@@ -41,13 +48,16 @@ class CustomCard extends StatelessWidget {
               padding: const EdgeInsets.only(top: 10,left:10),
               child: Column(
                 children: [
-                  Text(
-                    'Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 15.5,
-                      fontWeight: FontWeight.w500
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '${product.title}',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 15.5,
+                        fontWeight: FontWeight.w500
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -56,7 +66,7 @@ class CustomCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'EGP 1.200',
+                        '${'EGP'} ${product.price} ',
                         style: TextStyle(
                             fontSize: 15.5,
                             fontWeight: FontWeight.w500
@@ -80,7 +90,7 @@ class CustomCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Review (4.6)',style: TextStyle(
+                        'Review (${product.rating!.rate})',style: TextStyle(
                         fontWeight: FontWeight.w600
                       ),
                       ),
