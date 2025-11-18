@@ -84,9 +84,7 @@ class CustomCard extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height:2,
-                  ),
+                  SizedBox(height: 2,),
                   Row(
                     children: [
                       Text(

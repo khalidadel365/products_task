@@ -15,7 +15,7 @@ class ProductsViewBody extends StatelessWidget {
       builder: (context, state) {
         if(state is ProductsViewSuccess){
           return GridView.builder(
-            itemCount: 10,
+            itemCount: state.products.length,
             clipBehavior: Clip.none,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, // columns
