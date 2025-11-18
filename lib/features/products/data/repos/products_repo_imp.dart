@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:products_task/features/products_list/data/models/product_model.dart';
-import 'package:products_task/features/products_list/data/repos/products_repo.dart';
-
+import 'package:products_task/features/products/data/repos/products_repo.dart';
 import '../../../../core/errors/failures.dart';
 import '../../../../core/utilities/api_service.dart';
+import '../models/product_model.dart';
 
 class ProductsRepoImp implements ProductsRepo{
   final ApiService apiService;

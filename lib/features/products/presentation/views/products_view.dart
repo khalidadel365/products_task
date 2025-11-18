@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:products_task/features/products_list/presentation/views/widgets/products_view_body.dart';
+import 'package:products_task/features/products/presentation/views/widgets/products_view_body.dart';
 
 class ProductsView extends StatelessWidget {
   const ProductsView({super.key});

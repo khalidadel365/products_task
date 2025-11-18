@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:products_task/features/products_list/data/repos/products_repo.dart';
-import 'package:products_task/features/products_list/presentation/manager/products_view_cubit/products_view_states.dart';
+import 'package:products_task/features/products/presentation/manager/products_view_cubit/products_view_states.dart';
+
+import '../../../data/repos/products_repo.dart';
 
 
 class ProductsViewCubit extends Cubit<ProductsViewStates> {
